@@ -26,6 +26,8 @@ class _MyAppState extends State<MyApp> {
       platformVersion = await GohashMobile.platformVersion;
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
+    } on MissingPluginException { // method is missing
+      platformVersion = 'Internal app error';
     }
 
     // If the widget was removed from the tree while the asynchronous platform
