@@ -1,3 +1,4 @@
+apply from: '../../android/settings.gradle'
 include ':app'
 
 def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
