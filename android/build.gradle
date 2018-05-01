@@ -31,6 +31,15 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
+
+        // FIXME workaround issue https://github.com/golang/go/issues/25184
+        // this is used to include the mobileapi AAR as a dependency.
+        // When this issue is fixed, remove this and the dependency declaration on the AAR.
+        // For development, comment out the "include 'mobileapi' line in settings.gradle, then
+        // change the commented-out line in the dependencies section to use the AAR, not the project.
+        flatDir {
+            dirs 'mobileapi'
+        }
     }
 }
 
@@ -54,6 +63,10 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation project(':mobileapi')
     compileOnly files("$flutterRoot/bin/cache/artifacts/engine/android-arm/flutter.jar")
+
+    // FIXME uncomment this line for development so the Mobileapi classes are visible from Java.
+    // For the test app to work, the dependency on the project must be used instead of on the AAR.
+    //implementation name: 'mobileapi', ext: 'aar'
+    implementation project(':mobileapi')
 }
