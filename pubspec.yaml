@@ -1,8 +1,11 @@
 name: gohash_mobile
 description: go-hash Flutter API for mobile phones
 version: 0.0.1
-author:
-homepage:
+author: Renato Athaydes <renato@athaydes.com>
+homepage: https://github.com/renatoathaydes/gohash_mobile
+
+environment:
+  sdk: ">=2.0.0-edge <2.0.0"
 
 dependencies:
   flutter:
