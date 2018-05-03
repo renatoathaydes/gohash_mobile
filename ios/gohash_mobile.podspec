@@ -15,6 +15,8 @@ go-hash Flutter API for mobile phones
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
+
+  s.ios.vendored_frameworks = 'Frameworks/Mobileapi.framework'
   
   s.ios.deployment_target = '8.0'
 end
